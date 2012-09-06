@@ -1,0 +1,104 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{35F194C1-ACCF-4A63-9DCB-5E11121C66E6}"
+	ProjectSection(SolutionItems) = preProject
+		Castle.Aop.vsmdi = Castle.Aop.vsmdi
+		GlobalAssemblyInfo.cs = GlobalAssemblyInfo.cs
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.Aop", "Castle.Aop\Castle.Aop.csproj", "{80207921-7A50-4BA7-8874-F09722B304F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.Aop.Windsor", "Castle.Aop.Windsor\Castle.Aop.Windsor.csproj", "{F238A08B-02AF-4D6F-BF80-C07EB4EB8E2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.Aop.Autofac", "Castle.Aop.Autofac\Castle.Aop.Autofac.csproj", "{2EB17445-279C-4C38-BB2E-8662718E12A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.Aop.LinFu", "Castle.Aop.LinFu\Castle.Aop.LinFu.csproj", "{A5E9590F-1069-4E7C-8457-9B0B3DA0E2CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.Aop.Ninject", "Castle.Aop.Ninject\Castle.Aop.Ninject.csproj", "{3FB29FDA-093C-4BAE-8475-BD6B6590C68A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.Aop.StructureMap", "Castle.Aop.StructureMap\Castle.Aop.StructureMap.csproj", "{64BCDD2E-8D1E-4DC2-915C-BB1BE822CC5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.Aop.Windsor.Tests", "Castle.Aop.Windsor.Tests\Castle.Aop.Windsor.Tests.csproj", "{F97B3418-7A2F-4713-A590-24B33262DEE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.Aop.Autofac.Tests", "Castle.Aop.Autofac.Tests\Castle.Aop.Autofac.Tests.csproj", "{8BEF8D6F-D782-4332-941A-D66DB92656A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.Aop.LinFu.Tests", "Castle.Aop.LinFu.Tests\Castle.Aop.LinFu.Tests.csproj", "{8C797252-F10A-433E-B897-4A272A3A4E5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.Aop.StructureMap.Tests", "Castle.Aop.StructureMap.Tests\Castle.Aop.StructureMap.Tests.csproj", "{4182EAE3-58C2-4CDA-B56E-ED5931096D88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.Aop.Ninject.Tests", "Castle.Aop.Ninject.Tests\Castle.Aop.Ninject.Tests.csproj", "{3B890B30-19F1-4A3B-84C4-06B7F7E90FD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.Aop._Tests", "Castle.Aop._Tests\Castle.Aop._Tests.csproj", "{3CABD30C-21DC-4A62-8AC2-C4F15F5B92AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9E12AAC6-C685-4DBA-BA0C-F5EF404D7BD3}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\nuget.exe = .nuget\nuget.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Castle.Aop.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80207921-7A50-4BA7-8874-F09722B304F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80207921-7A50-4BA7-8874-F09722B304F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80207921-7A50-4BA7-8874-F09722B304F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80207921-7A50-4BA7-8874-F09722B304F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F238A08B-02AF-4D6F-BF80-C07EB4EB8E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F238A08B-02AF-4D6F-BF80-C07EB4EB8E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F238A08B-02AF-4D6F-BF80-C07EB4EB8E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F238A08B-02AF-4D6F-BF80-C07EB4EB8E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EB17445-279C-4C38-BB2E-8662718E12A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EB17445-279C-4C38-BB2E-8662718E12A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EB17445-279C-4C38-BB2E-8662718E12A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EB17445-279C-4C38-BB2E-8662718E12A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5E9590F-1069-4E7C-8457-9B0B3DA0E2CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E9590F-1069-4E7C-8457-9B0B3DA0E2CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5E9590F-1069-4E7C-8457-9B0B3DA0E2CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5E9590F-1069-4E7C-8457-9B0B3DA0E2CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FB29FDA-093C-4BAE-8475-BD6B6590C68A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FB29FDA-093C-4BAE-8475-BD6B6590C68A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FB29FDA-093C-4BAE-8475-BD6B6590C68A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FB29FDA-093C-4BAE-8475-BD6B6590C68A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64BCDD2E-8D1E-4DC2-915C-BB1BE822CC5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64BCDD2E-8D1E-4DC2-915C-BB1BE822CC5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64BCDD2E-8D1E-4DC2-915C-BB1BE822CC5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64BCDD2E-8D1E-4DC2-915C-BB1BE822CC5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F97B3418-7A2F-4713-A590-24B33262DEE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F97B3418-7A2F-4713-A590-24B33262DEE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F97B3418-7A2F-4713-A590-24B33262DEE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F97B3418-7A2F-4713-A590-24B33262DEE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BEF8D6F-D782-4332-941A-D66DB92656A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BEF8D6F-D782-4332-941A-D66DB92656A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BEF8D6F-D782-4332-941A-D66DB92656A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BEF8D6F-D782-4332-941A-D66DB92656A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C797252-F10A-433E-B897-4A272A3A4E5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C797252-F10A-433E-B897-4A272A3A4E5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C797252-F10A-433E-B897-4A272A3A4E5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C797252-F10A-433E-B897-4A272A3A4E5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4182EAE3-58C2-4CDA-B56E-ED5931096D88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4182EAE3-58C2-4CDA-B56E-ED5931096D88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4182EAE3-58C2-4CDA-B56E-ED5931096D88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4182EAE3-58C2-4CDA-B56E-ED5931096D88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B890B30-19F1-4A3B-84C4-06B7F7E90FD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B890B30-19F1-4A3B-84C4-06B7F7E90FD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B890B30-19F1-4A3B-84C4-06B7F7E90FD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B890B30-19F1-4A3B-84C4-06B7F7E90FD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CABD30C-21DC-4A62-8AC2-C4F15F5B92AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CABD30C-21DC-4A62-8AC2-C4F15F5B92AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CABD30C-21DC-4A62-8AC2-C4F15F5B92AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CABD30C-21DC-4A62-8AC2-C4F15F5B92AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

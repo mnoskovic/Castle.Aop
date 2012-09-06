@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3CABD30C-21DC-4A62-8AC2-C4F15F5B92AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Castle.Aop._Tests</RootNamespace>
+    <AssemblyName>Castle.Aop._Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.0.0.4001\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Interceptors\ClassInterceptorA.cs" />
+    <Compile Include="Interceptors\ClassInterceptorB.cs" />
+    <Compile Include="Classes\IOrderedClass.cs" />
+    <Compile Include="Interceptors\MethodInterceptorA.cs" />
+    <Compile Include="Interceptors\MethodInterceptorB.cs" />
+    <Compile Include="Classes\OrderedClass.cs" />
+    <Compile Include="Interceptors\Interceptor.cs" />
+    <Compile Include="Interceptors\BaseClassInterceptor.cs" />
+    <Compile Include="Interceptors\BaseClassMethodInterceptor.cs" />
+    <Compile Include="Interceptors\BaseInterfaceMethodInterceptor.cs" />
+    <Compile Include="Interceptors\InheritedClassInterceptor.cs" />
+    <Compile Include="Interceptors\InheritedClassMethodInterceptor.cs" />
+    <Compile Include="Interceptors\BaseInterfaceInterceptor.cs" />
+    <Compile Include="Interceptors\InheritedInterfaceInterceptor.cs" />
+    <Compile Include="Interceptors\InheritedInterfaceMethodInterceptor.cs" />
+    <Compile Include="Interceptors\ExceptionMethodInterceptor.cs" />
+    <Compile Include="InvokeException.cs" />
+    <Compile Include="Classes\IBaseClass.cs" />
+    <Compile Include="Classes\IInheritedClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\BaseClass.cs" />
+    <Compile Include="Classes\InheritedClass.cs" />
+    <Compile Include="TestBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Castle.Aop\Castle.Aop.csproj">
+      <Project>{80207921-7A50-4BA7-8874-F09722B304F4}</Project>
+      <Name>Castle.Aop</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
