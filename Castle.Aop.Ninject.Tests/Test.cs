@@ -20,6 +20,7 @@ namespace Castle.Aop.Ninject.Tests
 
             _interceptorKernel.Kernel.Bind<BaseClassInterceptor>().ToConstant(BaseClassInterceptor);
             _interceptorKernel.Kernel.Bind<BaseClassMethodInterceptor>().ToConstant(BaseClassMethodInterceptor);
+            _interceptorKernel.Kernel.Bind<BaseClassValueTypeInterceptor>().ToConstant(BaseClassValueTypeInterceptor);
             _interceptorKernel.Kernel.Bind<InheritedClassInterceptor>().ToConstant(InheritedClassInterceptor);
             _interceptorKernel.Kernel.Bind<InheritedClassMethodInterceptor>().ToConstant(InheritedClassMethodInterceptor);
             _interceptorKernel.Kernel.Bind<BaseInterfaceInterceptor>().ToConstant(BaseInterfaceInterceptor);
@@ -99,6 +100,21 @@ namespace Castle.Aop.Ninject.Tests
                 var instance = kernel.Get<IInheritedClass>();
                 instance.InvokeInheritedExceptionInterceptor();
             }
+        }
+
+        [TestMethod]
+        public void should_call_value_type_interceptor_and_return_correctly()
+        {
+            const int RetValue = 10;
+            using (var kernel = _interceptorKernel.Kernel)
+            {
+                var instance = kernel.Get<IBaseClass>();
+                var value = instance.InvokeMethodReturningValueType(RetValue);
+
+                Assert.AreEqual(RetValue, value);
+            }
+
+            AssertValueTypeInterceptorCalled();
         }
     }
 }

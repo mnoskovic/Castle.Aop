@@ -6,12 +6,9 @@ using StructureMap;
 
 namespace Castle.Aop.StructureMap.Tests
 {
-
-
     [TestClass]
     public class Test : TestBase
     {
-
         [TestInitialize]
         public override void TestInitialize()
         {
@@ -22,6 +19,7 @@ namespace Castle.Aop.StructureMap.Tests
 
             ObjectFactory.Configure(c => c.For<BaseClassInterceptor>().Use(BaseClassInterceptor));
             ObjectFactory.Configure(c => c.For<BaseClassMethodInterceptor>().Use(BaseClassMethodInterceptor));
+            ObjectFactory.Configure(c => c.For<BaseClassValueTypeInterceptor>().Use(BaseClassValueTypeInterceptor));
 
             ObjectFactory.Configure(c => c.For<InheritedClassInterceptor>().Use(InheritedClassInterceptor));
             ObjectFactory.Configure(c => c.For<InheritedClassMethodInterceptor>().Use(InheritedClassMethodInterceptor));
@@ -74,7 +72,7 @@ namespace Castle.Aop.StructureMap.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvokeException), AllowDerivedTypes = true)]
+        [ExpectedException(typeof (InvokeException), AllowDerivedTypes = true)]
         public void should_call_base_method_with_exception_interceptor()
         {
             var instance = ObjectFactory.GetInstance<IBaseClass>();
@@ -82,12 +80,23 @@ namespace Castle.Aop.StructureMap.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvokeException), AllowDerivedTypes = true)]
+        [ExpectedException(typeof (InvokeException), AllowDerivedTypes = true)]
         public void should_call_inherited_method_with_exception_interceptor()
         {
             var instance = ObjectFactory.GetInstance<IInheritedClass>();
             instance.InvokeInheritedExceptionInterceptor();
         }
+
+        [TestMethod]
+        public void should_call_value_type_interceptor_and_return_correctly()
+        {
+            const int RetValue = 10;
+            var instance = ObjectFactory.GetInstance<IBaseClass>();
+            var value = instance.InvokeMethodReturningValueType(RetValue);
+
+            Assert.AreEqual(RetValue, value);
+
+            AssertValueTypeInterceptorCalled();
+        }
     }
 }
-

@@ -30,7 +30,7 @@ namespace Castle.Aop
         /// <summary />
         protected override void InvokeMethodOnTarget()
         {
-            _parent.Method.Invoke(_parent.InvocationTarget, _parent.Arguments);
+            ReturnValue = _parent.Method.Invoke(_parent.InvocationTarget, _parent.Arguments);
         }
 
         /// <summary />
@@ -49,6 +49,13 @@ namespace Castle.Aop
         public override MethodInfo MethodInvocationTarget
         {
             get { return _parent.MethodInvocationTarget; }
+        }
+
+        /// <summary />
+        public new object ReturnValue
+        {
+            get { return _parent.ReturnValue; }
+            set { _parent.ReturnValue = value; }
         }
     }
 }
