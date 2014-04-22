@@ -45,6 +45,8 @@ namespace Castle.Aop.Windsor.Tests
             _container.Register(Component.For(typeof(IInheritedClass)).ImplementedBy(typeof(InheritedClass)));
             _container.Register(Component.For(typeof(IOrderedClass)).ImplementedBy(typeof(OrderedClass)));
 
+            _container.Register(Component.For<BaseClassValueTypeInterceptor>().Instance(BaseClassValueTypeInterceptor));
+
         }
 
 
@@ -90,6 +92,17 @@ namespace Castle.Aop.Windsor.Tests
         {
             var instance = _container.Resolve<IInheritedClass>();
             instance.InvokeInheritedExceptionInterceptor();
+        }
+
+        [TestMethod]
+        public void should_call_value_type_interceptor_and_return_correctly()
+        {
+            const int RetValue = 10;
+            var instance = _container.Resolve<IBaseClass>();
+            var value = instance.InvokeMethodReturningValueType(RetValue);
+
+            AssertValueTypeInterceptorCalled();
+            Assert.AreEqual(RetValue, value);
         }
     }
 }

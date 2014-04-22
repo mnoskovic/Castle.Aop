@@ -17,6 +17,10 @@ namespace Castle.Aop._Tests.Classes
 
         }
 
-        
+        [Interceptor(typeof(BaseClassValueTypeInterceptor))]
+        public int InvokeMethodReturningValueType(int retValue)
+        {
+            return retValue;
+        }
     }
 }

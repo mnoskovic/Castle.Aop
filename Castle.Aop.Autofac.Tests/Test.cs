@@ -26,6 +26,7 @@ namespace Castle.Aop.Autofac.Tests
             _builder.RegisterInstance(BaseInterfaceMethodInterceptor);
             _builder.RegisterInstance(InheritedInterfaceInterceptor);
             _builder.RegisterInstance(InheritedInterfaceMethodInterceptor);
+            _builder.RegisterInstance(BaseClassValueTypeInterceptor);
 
             _builder.RegisterInstance(ExceptionMethodInterceptor);
 
@@ -97,6 +98,21 @@ namespace Castle.Aop.Autofac.Tests
                 var instance = container.Resolve<IInheritedClass>();
                 instance.InvokeInheritedExceptionInterceptor();
             }
+        }
+
+        [TestMethod]
+        public void should_call_value_type_interceptor_and_return_correctly()
+        {
+            const int RetValue = 10;
+            using (var container = _builder.Build())
+            {
+                var instance = container.Resolve<IBaseClass>();
+                var value = instance.InvokeMethodReturningValueType(RetValue);
+                
+                Assert.AreEqual(RetValue, value);
+            }
+
+            AssertValueTypeInterceptorCalled();            
         }
     }
 }

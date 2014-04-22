@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Castle.Aop.LinFu.Tests
 {
     [TestClass]
-    public class Test:TestBase
+    public class Test : TestBase
     {
         private ServiceContainer _container;
 
@@ -20,6 +20,7 @@ namespace Castle.Aop.LinFu.Tests
 
             _container.AddService(BaseClassInterceptor);
             _container.AddService(BaseClassMethodInterceptor);
+            _container.AddService(BaseClassValueTypeInterceptor);
             _container.AddService(InheritedClassInterceptor);
             _container.AddService(InheritedClassMethodInterceptor);
             _container.AddService(BaseInterfaceInterceptor);
@@ -34,15 +35,14 @@ namespace Castle.Aop.LinFu.Tests
             _container.AddService(MethodInterceptorA);
             _container.AddService(MethodInterceptorB);
 
-            _container.AddService(typeof(IBaseClass), typeof(BaseClass));
-            _container.AddService(typeof(IInheritedClass), typeof(InheritedClass));
-            _container.AddService(typeof(IOrderedClass), typeof(OrderedClass));
+            _container.AddService(typeof (IBaseClass), typeof (BaseClass));
+            _container.AddService(typeof (IInheritedClass), typeof (InheritedClass));
+            _container.AddService(typeof (IOrderedClass), typeof (OrderedClass));
         }
 
         [TestMethod]
         public void should_call_base_method_interceptors()
         {
-            
             var instance = _container.GetService<IBaseClass>();
             instance.InvokeBaseInterceptors();
 
@@ -52,7 +52,6 @@ namespace Castle.Aop.LinFu.Tests
         [TestMethod]
         public void should_call_inherited_method_interceptors()
         {
-
             var instance = _container.GetService<IInheritedClass>();
             instance.InvokeInheritedInterceptors();
 
@@ -62,7 +61,6 @@ namespace Castle.Aop.LinFu.Tests
         [TestMethod]
         public void should_call_ordered_method_interceptors()
         {
-
             var instance = _container.GetService<IOrderedClass>();
             instance.InvokeOrderedInterceptors();
 
@@ -70,20 +68,31 @@ namespace Castle.Aop.LinFu.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvokeException), AllowDerivedTypes = true)]
+        [ExpectedException(typeof (InvokeException), AllowDerivedTypes = true)]
         public void should_call_base_method_with_exception_interceptor()
         {
             var instance = _container.GetService<IBaseClass>();
             instance.InvokeBaseExceptionInterceptor();
-
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvokeException), AllowDerivedTypes = true)]
+        [ExpectedException(typeof (InvokeException), AllowDerivedTypes = true)]
         public void should_call_inherited_method_with_exception_interceptor()
         {
             var instance = _container.GetService<IInheritedClass>();
             instance.InvokeInheritedExceptionInterceptor();
+        }
+
+        [TestMethod]
+        public void should_call_value_type_interceptor_and_return_correctly()
+        {
+            const int RetValue = 10;
+
+            var instance = _container.GetService<IBaseClass>();
+            var value = instance.InvokeMethodReturningValueType(RetValue);
+
+            Assert.AreEqual(RetValue, value);
+            AssertValueTypeInterceptorCalled();
         }
     }
 }

@@ -14,6 +14,7 @@ namespace Castle.Aop._Tests
         protected InheritedInterfaceInterceptor InheritedInterfaceInterceptor;
         protected InheritedInterfaceMethodInterceptor InheritedInterfaceMethodInterceptor;
         protected ExceptionMethodInterceptor ExceptionMethodInterceptor;
+        protected BaseClassValueTypeInterceptor BaseClassValueTypeInterceptor;
 
         protected ClassInterceptorA ClassInterceptorA;
         protected ClassInterceptorB ClassInterceptorB;
@@ -31,6 +32,7 @@ namespace Castle.Aop._Tests
             InheritedClassMethodInterceptor = new InheritedClassMethodInterceptor();
             BaseInterfaceInterceptor = new BaseInterfaceInterceptor();
             BaseInterfaceMethodInterceptor = new BaseInterfaceMethodInterceptor();
+            BaseClassValueTypeInterceptor = new BaseClassValueTypeInterceptor();
             InheritedInterfaceInterceptor = new InheritedInterfaceInterceptor();
             InheritedInterfaceMethodInterceptor = new InheritedInterfaceMethodInterceptor();
 
@@ -60,7 +62,6 @@ namespace Castle.Aop._Tests
 
         }
 
-
         public void AssertInheritedMethodInterceptorsCall()
         {
             Assert.IsTrue(BaseInterfaceInterceptor.Called(0));
@@ -72,6 +73,11 @@ namespace Castle.Aop._Tests
 
             Assert.IsFalse(BaseInterfaceMethodInterceptor.Called());
             Assert.IsFalse(BaseClassMethodInterceptor.Called());
+        }
+
+        public void AssertValueTypeInterceptorCalled()
+        {
+            Assert.IsTrue(BaseClassValueTypeInterceptor.Called());
         }
 
         public void AssertOrderedInterceptorsCall()

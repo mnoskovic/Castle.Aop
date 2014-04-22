@@ -9,5 +9,7 @@ namespace Castle.Aop._Tests.Classes
         void InvokeBaseInterceptors();
 
         void InvokeBaseExceptionInterceptor();
+
+        int InvokeMethodReturningValueType(int retValue);
     }
 }

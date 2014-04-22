@@ -48,6 +48,7 @@
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Interceptors\BaseClassValueTypeInterceptor.cs" />
     <Compile Include="Interceptors\ClassInterceptorA.cs" />
     <Compile Include="Interceptors\ClassInterceptorB.cs" />
     <Compile Include="Classes\IOrderedClass.cs" />
